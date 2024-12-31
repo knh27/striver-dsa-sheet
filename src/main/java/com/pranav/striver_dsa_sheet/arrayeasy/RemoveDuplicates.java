@@ -5,7 +5,7 @@ public class RemoveDuplicates {
         RemoveDuplicates obj=new RemoveDuplicates();
         int[] arr={1,1,4,4,4,4,5,6,6,8};
 //        int[] arr={1,4,5,6,8,9,66};
-        obj.removeDuplicates(arr);
+        obj.removeDuplicates(arr); 
     }
 
     public void removeDuplicates(int[] arr){
