@@ -5,14 +5,16 @@ import java.util.Map;
 
 public class LongestSubArrayPosSum {
     public static void main(String[] args) {
-        int[]a={9,1,2,3,5,1,9};
+        int[]a={9,1,2,3,5,1,1,9};
         int sum=10, result=3;
         LongestSubArrayPosSum obj=new LongestSubArrayPosSum();
 //        obj.longestSubArray1(a);
 
 //        obj.longestSubArray2(a,sum);
 
-        obj.longestSubArray_map(a, sum);
+//        obj.longestSubArray_map(a, sum);
+
+        obj.longestSubArray_optimised(a,10);
     }
 
 
@@ -64,11 +66,33 @@ public class LongestSubArrayPosSum {
             }
 
             if(!preSum.containsKey(sum)){
+
+
+
                 preSum.put(sum, i);
             }
 
         }
         System.out.println(maxLen);
     }
+
+    void longestSubArray_optimised(int[] a, int k){
+        int r=0,l=0,sum=0,maxLen=0;
+        while(r<a.length){
+            sum+=a[r];
+            while(l<=r && sum>k){
+                sum-=a[l];
+                l++;
+            }
+            if(sum==k){
+                maxLen=Math.max(maxLen, r-l+1);
+            }
+            r++;
+        }
+        System.out.println(maxLen);
+    }
+
+
+
 }
 
