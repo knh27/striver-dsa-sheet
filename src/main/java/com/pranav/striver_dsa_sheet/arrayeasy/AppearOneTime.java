@@ -6,29 +6,31 @@ import java.util.Map;
 public class AppearOneTime {
     public static void main(String[] args) {
         AppearOneTime obj=new AppearOneTime();
-        int[] a={6,1,4,2,1,5,2,6,4,1};
+//        int[] a={6,1,4,2,1,5,2,6,4,1};
 //        int[] a={4,1,2,1,2};
-//        int[] a={2,2,1};
+        int[] a={2,2,1};
 //        obj.AppearOneTime_bruteForce(a);
         obj.AppearOneTime_betterApproach(a);
+
+//        obj.appearOnce(a);
 
     }
 
     void AppearOneTime_bruteForce(int[] a){
 
         for(int i=0;i<a.length;i++){
-            int count=0;
+            Boolean flag=false;
             if(a[i] != Integer.MIN_VALUE){
                 for(int j=0;j<a.length;j++){
                     if(a[i]==a[j]){
-                        count++;
+                        flag=true;
                         if(i!=j){
                             a[j]=Integer.MIN_VALUE;
                         }
                     }
 
                 }
-                if(count==1) {
+                if(!flag) {
                     System.out.println(a[i]);
                     break;
                 }
@@ -51,4 +53,26 @@ public class AppearOneTime {
             }
         }
     }
+
+
+    //commented is incorrect code as it doesnot handle case if last element of an array is an unique element
+
+
+//    void appearOnce(int[] a){
+//        for(int i=0;i<a.length-1;i++){
+//            if(a[i]!=Integer.MIN_VALUE){
+//                Boolean flag=false;
+//                for(int j=i+1;j<a.length;j++){
+//                    if(a[i]==a[j]){
+//                        flag=true;
+//                        a[j]=Integer.MIN_VALUE;
+//                    }
+//                }
+//                if(!flag){
+//                    System.out.println(a[i]);
+//                    return;
+//                }
+//            }
+//        }
+//    }
 }
