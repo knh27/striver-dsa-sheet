@@ -9,7 +9,9 @@ public class MaxSubarraySum {
 
 //        obj.maxSubArray_better(a);
 
-        obj.maxSubArray_kadanes(a);
+//        obj.maxSubArray_kadanes(a);
+
+        obj.maxSumSubArrayIndex_kadanes(a);
 
     }
     void maxSubArray_bruteForce(int[] a){
@@ -47,5 +49,25 @@ public class MaxSubarraySum {
             if(sum<0) sum=0;
         }
         System.out.println(maxSum);
+    }
+
+    void maxSumSubArrayIndex_kadanes(int[] a){
+        int maxSum=Integer.MIN_VALUE;
+        int sum=0;
+        int start=-1,end=-1,startAns=-1;
+        for(int i=0;i<a.length;i++){
+            if(sum==0)start=i;
+            sum+=a[i];
+            if(maxSum<sum){
+                maxSum=sum;
+                end=i;
+                startAns=start;
+            }
+
+            if(sum<0)sum=0;
+
+
+        }
+        System.out.println(startAns+" , "+end);
     }
 }
