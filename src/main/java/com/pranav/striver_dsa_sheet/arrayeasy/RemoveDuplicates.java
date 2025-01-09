@@ -5,7 +5,8 @@ public class RemoveDuplicates {
         RemoveDuplicates obj=new RemoveDuplicates();
         int[] arr={1,1,4,4,4,4,5,6,6,8};
 //        int[] arr={1,4,5,6,8,9,66};
-        obj.removeDuplicates(arr); 
+//        obj.removeDuplicates(arr);
+        obj.removeDuplicates2(arr);
     }
 
     public void removeDuplicates(int[] arr){
@@ -22,5 +23,25 @@ public class RemoveDuplicates {
             System.out.print(arr[k]);
         }
     }
+
+    public void removeDuplicates2(int[] arr){
+        int i=0,j=1,n=arr.length;
+        while(j<n){
+            if(j<n&&arr[i]==arr[j]){
+                while(j<n&&arr[i]==arr[j]){
+                    j++;
+                }
+                if(j<n)arr[++i]=arr[j];
+            }else{
+                i++;
+                j++;
+            }
+
+        }
+        for(Integer val:arr) System.out.print(val);
+    }
+
+
+
 
 }
