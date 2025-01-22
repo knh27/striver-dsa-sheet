@@ -2,6 +2,8 @@ package com.pranav.striver_dsa_sheet.treeeasy;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Treebasic {
     public static void main(String[] args) {
@@ -25,6 +27,17 @@ public class Treebasic {
         f.left=g;
         f.right=null;
 
+/*
+                1
+              /  \
+            2     3
+          /     /  \
+        4      5    6
+                   /
+                  7
+
+ */
+
 
 
         Treebasic obj=new Treebasic();
@@ -36,7 +49,7 @@ public class Treebasic {
 
 //        System.out.println(obj.sum(a));
 
-//        System.out.println(obj.max(a));
+//    n     System.out.println(obj.max(a));
 
 //        System.out.println(obj.height(a));
 
@@ -53,6 +66,7 @@ public class Treebasic {
 
 //        obj.BFS(a);
 
+//        obj.levelOrderRev(a,5)
 
 
 
@@ -123,6 +137,24 @@ public class Treebasic {
             System.out.print(temp.val);
             q.remove();
         }
+    }
+
+//     List<List<Integer>> levelOrder(Node root, List<List<Integer>> a, int n){
+//        if(n==1){
+//
+//
+//        }
+//        return a;
+//    }
+
+    List<Integer> levelOrderRev(Node root, List<Integer> a, int n){
+        if(root==null) return a;
+        if(n==1){
+            a.add(root.val);
+        }
+        levelOrderRev(root.right,a ,n-1);
+        levelOrderRev(root.left, a, n-1);
+        return a;
     }
 
 

@@ -1,6 +1,6 @@
 package com.pranav.striver_dsa_sheet.linklistmedium;
 
-public class MiddleNode {
+public class MiddleCreateNode {
     private static Node head=null,tail=null;
     public static void main(String[] args) {
         int[] a={1,2,3,4,5};
