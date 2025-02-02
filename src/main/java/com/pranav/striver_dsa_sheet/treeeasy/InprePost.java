@@ -52,7 +52,7 @@ public class InprePost {
 
         Stack<NodeState> s=new Stack<>();
 
-        TreeNode node=root;
+//        TreeNode node=root;
 
 
         if(root!=null)s.push(new NodeState(root, 1));

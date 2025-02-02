@@ -49,7 +49,7 @@ public class Treebasic {
 
 //        System.out.println(obj.sum(a));
 
-//    n     System.out.println(obj.max(a));
+//        System.out.println(obj.max(a));
 
 //        System.out.println(obj.height(a));
 

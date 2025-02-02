@@ -30,4 +30,44 @@ public class ZerosToEnd {
             System.out.print(k);
         }
     }
+
+    void zerosToEnd_noOrder(int[] a){
+        int l=0,r=a.length-1;
+        while(l<r){
+            while(l<r && a[r]==0)r++;
+            while(l<r && a[l]!=0)l++;
+            if (l < r) {
+                int temp=a[l];
+                a[l]=a[r];
+                a[r]=temp;
+                l++;
+                r--;
+            }
+
+        }
+    }
+
+    void zerosToEnd_order(int[] a){
+        int i=0;int j=i+1;
+        while(j<a.length){
+            while(j<a.length && a[i] != 0)i++;
+            while(j<a.length && a[j]==0)j++;
+            if(j<a.length){
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+                i++;
+                j++;
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
