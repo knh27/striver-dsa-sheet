@@ -1,4 +1,4 @@
-package com.pranav.striver_dsa_sheet.treeeasy;
+package com.pranav.striver_dsa_sheet.treemedium;
 
 public class BalancedTree {
 

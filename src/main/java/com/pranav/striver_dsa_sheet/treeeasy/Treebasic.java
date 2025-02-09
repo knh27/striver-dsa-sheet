@@ -111,7 +111,7 @@ public class Treebasic {
     }
 
     int height(Node root){
-        if(root==null|| (root.left==null && root.right==null)) return 0;
+        if(root==null) return 0;
 
         int maxHeight=Math.max(height(root.left), height(root.right));
         return 1+maxHeight;
@@ -166,5 +166,7 @@ class Node{
     Node right;
     Node(int val){
         this.val=val;
+        this.left=null;
+        this.right=null;
     }
 }
