@@ -1,6 +1,6 @@
 package com.pranav.striver_dsa_sheet.binarysearch1D;
 
-public class LowerBoundUpperBound {
+public class LowerBoundUpperBoundInsertIndex {
     public static void main(String[] args) {
         int[] a={1,3,5,7,9,11,14,16,19};
         int tar=17;
